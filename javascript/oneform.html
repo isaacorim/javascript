@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oneform</title>
+    <style>
+        .put{
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<form name="myForm" onsubmit="return valdateForm()">
+    Name: <input class="put" type="text" name="myname">
+    <input type="submit">
+</form>
+
+
+
+<script>
+
+// form.addEventListener("submit", (e) => {e.preventDefault() 
+// if(input.value === ""){
+// 	alert("field required")
+// }})
+
+function validateForm(){
+	let x = document.forms["myForm"]["myname"].value
+	if(x==""){
+		alert("name is blah")
+        return false
+	}
+}
+
+</script>
+
+</body>
+</html>

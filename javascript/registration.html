@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registration.css">
+    <!-- <meta http-equiv="refresh" content="5"> -->
+    <title>Registration</title>
+</head>
+
+<body id="myBody">
+
+<div class="rollingBox"></div>
+
+<form id="form" name="myForm">
+
+    <p id="output"></p>
+
+    <h3 id="header"><strong> SIGN UP</strong></h3>
+    <p id="work" class="array">jargons</p>
+    
+    <p><strong>Name</strong></p>
+    <input type="text" placeholder="Enter your full name" name="fullname">
+
+    <p><strong>Email</strong></p>
+    <input type="text" placeholder="Enter your email" name="email">
+
+    <p><strong>Password</strong></p>
+    <input type="password" placeholder="Enter your password" name="password">
+
+    <button onclick=`${mydisplay()}`>play</button>
+
+    <button id="myEvent">event</button>
+    <p style="color: red; display: none;" class="displayParagraph">This is my event</p>
+
+    <p><input type="submit" name="btn"><strong>SIGN UP!</strong></p>
+
+    <p id="signin">Have an Account? <a id="link" href="#"><strong>Login Here!</strong></a></p>
+
+    <p id="default"></p>
+</form>
+
+<script src="registration.js"></script>
+
+<script>
+
+// document.getElementById("header").innerHTML="Contact Us"
+// document.getElementById("header").innerText="Register here"
+
+/*Multiline */
+// document.write(3+5)
+
+// window.alert("Hello Everybody")
+
+// console.log("Who are you")
+
+//04/06/2025: Datatypes, assignment: get info about difference and usage between var, let and const; find other datatype
+
+// r = 5
+// r = "wake up"
+// var_instructor =     "Gods Love"
+// age = (15*5)/3 - 2
+// answer_me = true
+
+// console.log(r)
+// console.log(var_instructor)
+// console.log(age)
+
+//js is case-sensitive
+// function date(){
+//     today = 2025
+//     Isaac = 5
+//     You = today * Isaac
+//     return You
+// }
+
+// console.log(date())
+
+// function toCelsius(farenheit){
+//     answer = (5/9) * (farenheit-32)
+//     console.log(answer)
+// }
+// toCelsius(77)
+
+//Diff between methods and functions, create a calculator using function
+
+/*
+Functions and methods are both blocks of reusable code that perform specific tasks, but they differ in their association and usage.
+
+Functions are standalone blocks of code that can be called directly by their name. They are not associated with any specific object.
+*/
+
+// Function declaration
+// function add(a, b) {
+//   return a + b;
+// }
+
+// Calling the function
+// result = add(5, 3); // result will be 8
+// console.log(result)
+
+// function add(num1, num2) {
+//   return num1 + num2;
+// }
+
+// function subtract(num1, num2) {
+//   return num1 - num2;
+// }
+
+// function multiply(num1, num2) {
+//   return num1 * num2;
+// }
+
+// function divide(num1, num2) {
+//   if (num2 === 0) {
+//     return "Cannot divide by zero";
+//   }
+//   return num1 / num2;
+// }
+
+// // Example usage:
+// let number1 = 10;
+// let number2 = 5;
+
+// console.log(add(number1,number2))
+// console.log(subtract(number1,number2))
+// console.log(multiply(number1,number2))
+// console.log(divide(number1,number2))
+
+//The use of var, let and const ...
+
+//Default method
+// x=5;
+// y=6;
+// z=x+y;
+
+// document.getElementById("default").innerHTML = "The sum of 6 and 5 is:" + z;
+
+//var
+// var x=5;
+// var y=3;
+// var z=x+y;
+
+// document.getElementById("default").innerHTML = "The sum of 3 and 5 is:" + z;
+
+//const
+//const x=5;
+// var x= "Isaac"; //It will give an error because it is a constant
+// const y=6;
+// const z=x+y;
+
+// document.getElementById("default").innerHTML = "The sum of 6 and 5 is:" + z;
+
+//let
+// let x=5;
+// let y=6;
+// let z=x+y;
+
+// document.getElementById("default").innerHTML = "The sum of 6 and 5 is:" + z;
+
+// var carName;
+// let carName = "Volvo";
+// alert(carName)
+
+
+//Datatypes
+/*
+strings
+numbers
+bigint
+undefined
+null
+Array
+object
+*/
+
+
+numbers = [1,2,3,4,5,6,7,8]
+cars = ["toyota", "benz", "mercedes"]
+student = {
+    name: "Isaac", 
+    id: 2,
+    courses: ["html", "css", "js"],
+    child: { name: "Friday", age: 2, height: 1 }
+}
+
+// console.log(student)
+// document.getElementById("work").innerHTML = student
+
+const myObject = { 
+  name: "Isaac", 
+  age: 3, 
+  fair: true, 
+  // subjects: ["HTML", "css", "js"],
+  // describeMe: function() {
+  //   return "My name is " + this.name + ". I am " + this.age + ". It is " + this.fair + " that I am fair in complexion."
+  // }
+} 
+
+// console.log(typeof(student.child.height))
+
+const objectMutant = myObject
+
+objectMutant.age = 5
+
+// console.log(objectMutant)
+// console.log(myObject)
+
+myObject.height = 7.1
+
+myObject.fair = false
+
+aboutMe = {}
+
+aboutMe.hobby = "Sleeping"
+aboutMe.food = "Beans"
+
+// console.log(aboutMe)
+
+// document.getElementById("output").innerHTML = myObject["name"]
+
+// document.getElementById("output").innerHTML = myObject.fair
+
+/*Object constructor works in a function*/
+function objConst(first, second, third){
+  this.name = first;
+  this.age = second;
+  this.fair = third;
+}
+
+const person1 = new objConst("Isaac", 3, true)
+
+const person2 = new objConst("Tosin", 6, false)
+
+const person3  = new objConst("Semipe", 5, true)
+
+// console.log(person3)
+/*Read about new keyword in Javascript.   1. object mutation and displaying objects*/
+
+/*Displaying objects*/
+//As a string, by objectName.property
+
+//In a loop
+myString = ""
+for ( let x in myObject ){
+  myString += myObject[x] + " ,<br>"
+}
+document.getElementById("default").innerHTML = myString
+
+//object.values
+display = Object.values(myObject)
+// document.getElementById('default').innerHTML=display
+
+
+
+
+// Object.entries
+// fourth = ""
+// for(let [property, value] of Object.entries(myObject)){
+//   fourth += property + ": " + value + "<br>"
+// }
+// document.getElementById('default').innerHTML=fourth
+
+
+//JSON.stringify: Javascript Object Notation
+let obj1 = JSON.stringify(myObject)
+// alert(obj1)
+
+
+
+
+</script>
+
+</body>
+</html>
